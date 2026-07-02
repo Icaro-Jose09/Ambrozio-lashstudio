@@ -1,0 +1,18 @@
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: ambrozio-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ambrozio_admin
+      POSTGRES_PASSWORD: ambrozio_password
+      POSTGRES_DB: ambrozio_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ambrozio-pg-data:/var/lib/postgresql/data
+
+volumes:
+  ambrozio-pg-data:
+    name: ambrozio-pg-data
