@@ -1,2 +1,6 @@
+com/ambrozio/backend/domain/user/User.class
 com/ambrozio/backend/AmbrozioBackendApplication.class
+com/ambrozio/backend/infra/security/TokenService.class
+com/ambrozio/backend/domain/user/UserRole.class
 com/ambrozio/backend/infra/security/SecurityConfig.class
+com/ambrozio/backend/repositories/UserRepository.class

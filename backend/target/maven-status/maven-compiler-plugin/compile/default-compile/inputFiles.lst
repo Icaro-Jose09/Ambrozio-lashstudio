@@ -1,2 +1,6 @@
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/infra/security/TokenService.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/AmbrozioBackendApplication.java
-/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/infra/security/SecurityConfig.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/UserRole.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/repositories/UserRepository.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/infra/security/SecurityConfig.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/User.java
