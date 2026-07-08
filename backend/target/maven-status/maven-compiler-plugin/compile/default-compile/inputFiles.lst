@@ -1,6 +1,12 @@
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/infra/security/TokenService.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/AmbrozioBackendApplication.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/UserRole.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/services/AuthorizationService.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/dtos/AuthenticationDTO.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/dtos/LoginResponseDTO.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/infra/security/SecurityFilter.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/controllers/AuthenticationController.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/repositories/UserRepository.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/infra/security/SecurityConfig.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/dtos/RegisterDTO.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/User.java

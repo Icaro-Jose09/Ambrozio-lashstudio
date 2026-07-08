@@ -1,12 +1,18 @@
 package com.ambrozio.backend.domain.user;
 
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -31,11 +37,8 @@ public class User {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // Construtor vazio exigido pelo JPA/Hibernate
-    public User() {
-    }
+    public User() {}
 
-    // Construtor com argumentos para facilitar a criação
     public User(String name, String email, String password, UserRole role) {
         this.name = name;
         this.email = email;
@@ -43,36 +46,53 @@ public class User {
         this.role = role;
     }
 
-    // Callbacks do Ciclo de Vida do JPA para preencher as datas automaticamente
     @PrePersist
-    protected void onCreate() {
-        this.createdAt = LocalDateTime.now();
-    }
+    protected void onCreate() { this.createdAt = LocalDateTime.now(); }
 
     @PreUpdate
-    protected void onUpdate() {
-        this.updatedAt = LocalDateTime.now();
+    protected void onUpdate() { this.updatedAt = LocalDateTime.now(); }
+
+    // --- MÉTODOS DO SPRING SECURITY (UserDetails) ---
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        if(this.role == UserRole.ADMIN) {
+            return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        } else {
+            return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        }
     }
 
-    // Getters e Setters
+    @Override
+    public String getUsername() {
+        return this.email; // O e-mail é o nosso identificador (username)
+    }
+
+    @Override
+    public boolean isAccountNonExpired() { return true; }
+
+    @Override
+    public boolean isAccountNonLocked() { return true; }
+
+    @Override
+    public boolean isCredentialsNonExpired() { return true; }
+
+    @Override
+    public boolean isEnabled() { return true; }
+
+    // --- GETTERS & SETTERS ORIGINAIS ---
     public UUID getId() { return id; }
     public void setId(UUID id) { this.id = id; }
-
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
-
     public UserRole getRole() { return role; }
     public void setRole(UserRole role) { this.role = role; }
-
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
-
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
 }

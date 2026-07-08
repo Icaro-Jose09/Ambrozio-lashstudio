@@ -1,6 +1,12 @@
+com/ambrozio/backend/domain/user/dtos/RegisterDTO.class
+com/ambrozio/backend/infra/security/SecurityFilter.class
 com/ambrozio/backend/domain/user/User.class
-com/ambrozio/backend/AmbrozioBackendApplication.class
+com/ambrozio/backend/domain/user/dtos/AuthenticationDTO.class
 com/ambrozio/backend/infra/security/TokenService.class
 com/ambrozio/backend/domain/user/UserRole.class
+com/ambrozio/backend/services/AuthorizationService.class
+com/ambrozio/backend/domain/user/dtos/LoginResponseDTO.class
 com/ambrozio/backend/infra/security/SecurityConfig.class
+com/ambrozio/backend/controllers/AuthenticationController.class
+com/ambrozio/backend/AmbrozioBackendApplication.class
 com/ambrozio/backend/repositories/UserRepository.class
