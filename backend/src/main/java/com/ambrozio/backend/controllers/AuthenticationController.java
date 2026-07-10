@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,6 +57,11 @@ public class AuthenticationController {
         this.userRepository.save(newUser);
 
         // Retorna status 200 (OK) informando que foi criado com sucesso
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok().build();}  
+            // Hack para testes: Listar todos os usuários para copiarmos o ID
+    @GetMapping("/users")
+    public ResponseEntity<java.util.List<User>> getAllUsers() {
+        return ResponseEntity.ok(this.userRepository.findAll());
     }
+    
 }
