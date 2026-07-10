@@ -1,3 +1,4 @@
+com/ambrozio/backend/repositories/StudioServiceRepository.class
 com/ambrozio/backend/domain/user/dtos/RegisterDTO.class
 com/ambrozio/backend/infra/security/SecurityFilter.class
 com/ambrozio/backend/domain/user/User.class
@@ -11,4 +12,6 @@ com/ambrozio/backend/controllers/StudioController.class
 com/ambrozio/backend/controllers/AuthenticationController.class
 com/ambrozio/backend/domain/service/StudioService.class
 com/ambrozio/backend/AmbrozioBackendApplication.class
+com/ambrozio/backend/controllers/StudioServiceController.class
 com/ambrozio/backend/repositories/UserRepository.class
+com/ambrozio/backend/domain/service/dtos/StudioServiceRequestDTO.class
