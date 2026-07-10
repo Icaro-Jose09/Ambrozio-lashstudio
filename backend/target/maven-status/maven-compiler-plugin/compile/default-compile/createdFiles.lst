@@ -9,5 +9,6 @@ com/ambrozio/backend/domain/user/dtos/LoginResponseDTO.class
 com/ambrozio/backend/infra/security/SecurityConfig.class
 com/ambrozio/backend/controllers/StudioController.class
 com/ambrozio/backend/controllers/AuthenticationController.class
+com/ambrozio/backend/domain/service/StudioService.class
 com/ambrozio/backend/AmbrozioBackendApplication.class
 com/ambrozio/backend/repositories/UserRepository.class

@@ -3,6 +3,7 @@
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/UserRole.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/services/AuthorizationService.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/infra/security/SecurityConfig.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/service/StudioService.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/controllers/StudioController.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/dtos/AuthenticationDTO.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/dtos/LoginResponseDTO.java
