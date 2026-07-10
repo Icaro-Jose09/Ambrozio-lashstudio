@@ -30,12 +30,13 @@ public class AuthenticationController {
     private UserRepository userRepository;
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO> login(@RequestBody AuthenticationDTO data) {
+    public ResponseEntity<Object> login(@RequestBody AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.email(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
         var token = tokenService.generateToken((User) auth.getPrincipal());
         
-        return ResponseEntity.ok(new LoginResponseDTO(token));
+        // Devolvemos um Map para garantir que o JSON será desenhado corretamente na tela
+        return ResponseEntity.ok(java.util.Map.of("token", token));
     }
 
     @PostMapping("/register")
