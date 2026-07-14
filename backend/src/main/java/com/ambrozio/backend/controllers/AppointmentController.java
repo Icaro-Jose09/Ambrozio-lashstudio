@@ -3,11 +3,9 @@ package com.ambrozio.backend.controllers;
 import com.ambrozio.backend.domain.appointment.Appointment;
 import com.ambrozio.backend.domain.appointment.dtos.AppointmentRequestDTO;
 import com.ambrozio.backend.domain.appointment.dtos.AppointmentResponseDTO;
-import com.ambrozio.backend.domain.service.StudioService;
-import com.ambrozio.backend.domain.user.User;
 import com.ambrozio.backend.repositories.AppointmentRepository;
-import com.ambrozio.backend.repositories.StudioServiceRepository;
-import com.ambrozio.backend.repositories.UserRepository;
+import com.ambrozio.backend.services.AppointmentService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,36 +17,32 @@ import java.util.List;
 public class AppointmentController {
 
     @Autowired
+    private AppointmentService appointmentService; // Injetamos o nosso cérebro aqui
+
+    @Autowired
     private AppointmentRepository appointmentRepository;
 
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private StudioServiceRepository serviceRepository;
-
     @PostMapping
-    public ResponseEntity<AppointmentResponseDTO> createAppointment(@RequestBody AppointmentRequestDTO data) {
-        User client = userRepository.findById(data.clientId())
-                .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
-
-        StudioService service = serviceRepository.findById(data.serviceId())
-                .orElseThrow(() -> new RuntimeException("Serviço não encontrado"));
-
-        Appointment newAppointment = new Appointment(client, service, data.appointmentDate());
-        appointmentRepository.save(newAppointment);
-        
-        // Retorna apenas a máscara limpa e segura
-        return ResponseEntity.ok(new AppointmentResponseDTO(newAppointment));
+    public ResponseEntity<?> createAppointment(@RequestBody AppointmentRequestDTO data) {
+        try {
+            // Tentamos realizar o agendamento via Service
+            Appointment newAppointment = appointmentService.create(data);
+            return ResponseEntity.ok(new AppointmentResponseDTO(newAppointment));
+        } catch (IllegalArgumentException e) {
+            // Se o Service barrar alguma regra, devolvemos erro 400 (Bad Request) com a mensagem
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @GetMapping
     public ResponseEntity<List<AppointmentResponseDTO>> getAllAppointments() {
-        // Converte a lista de entidades na lista de DTOs seguros
         List<AppointmentResponseDTO> appointments = appointmentRepository.findAll().stream()
                 .map(AppointmentResponseDTO::new)
                 .toList();
                 
-        return ResponseEntity.ok(appointments);
+         return ResponseEntity.ok(appointments);
+        
     }
+
 }
+

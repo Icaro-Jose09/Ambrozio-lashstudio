@@ -10,6 +10,7 @@
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/service/dtos/StudioServiceRequestDTO.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/controllers/StudioController.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/controllers/StudioServiceController.java
+/Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/services/AppointmentService.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/user/dtos/AuthenticationDTO.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/repositories/AppointmentRepository.java
 /Users/icarojosedossantos/Developer/Ambrozio-lashstudio-1/backend/src/main/java/com/ambrozio/backend/domain/appointment/dtos/AppointmentResponseDTO.java
